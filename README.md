@@ -30,6 +30,7 @@ Open http://localhost:4173.
 ## Files
 
 - `dist/index.html`: page structure and metadata
+- `dist/favicon.svg`, `dist/favicon-48.png`, `dist/favicon.ico`, and `dist/apple-touch-icon.png`: browser, search, and home-screen icons
 - `dist/style.css` and `dist/redesign.css`: responsive styles
 - `dist/app.js`: content, language switching, and game logic
 - `dist/i18n.js`: localized interface strings, meanings, and explanations

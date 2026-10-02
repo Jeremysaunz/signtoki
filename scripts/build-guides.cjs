@@ -42,7 +42,7 @@ function lessonHtml(locale,index) {
  }).join(''),'reading-checks');
  return steps+examples+counter+checks;
 }
-const favicon = fs.readFileSync(path.join(root,'dist/index.html'),'utf8').match(/<link rel="icon"[^>]+>/)[0];
+const favicon = fs.readFileSync(path.join(root,'dist/index.html'),'utf8').match(/<link rel="(?:icon|apple-touch-icon)"[^>]+>/g).join('');
 const sceneTiles={'약국':0,'편의점':1,'카페':2,'식당':4,'지하철':5,'휴무':23};
 function scene(g){const tile=sceneTiles[g.scene];return `<div class="context-scene scene-tile" style="--scene-x:${tile%4/3*100}%;--scene-y:${Math.floor(tile/4)/5*100}%" role="img" aria-label="${esc(g.scene)}"><span class="attached-sign" lang="ko">${esc(g.scene)}</span></div>`;}
 function word(locale,hangul){const i=rows.findIndex(r=>r[0]===hangul);if(i<0)throw Error(hangul);const row=rows[i];return {hangul,reading:row[1],meaning:locale==='en'?row[2]:locale==='ko'?row[3]:sandbox.translations[locale].words[i]};}
