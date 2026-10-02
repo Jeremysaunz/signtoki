@@ -83,3 +83,26 @@ for(const [locale] of locales) {
  }
 }
 console.log('Built 30 localized About, Contact and Privacy pages. Advertising enabled: '+settings.ads.enabled);
+
+// Keep crawlable, canonical pages discoverable by Google and other search engines.
+// The app's language query parameters are intentionally omitted: translated guide
+// and information pages have stable, indexable paths of their own.
+const siteOrigin = 'https://signtoki.com';
+const sitemapPages = [{path: '/', alternates: []}];
+for (const [locale] of locales) {
+ if(!data.locales[locale]) continue;
+ sitemapPages.push({path: url(locale), alternates: locales.filter(([code])=>data.locales[code]).map(([code])=>[code,url(code)])});
+ for(const guide of data.guides) sitemapPages.push({
+  path: url(locale,guide.id),
+  alternates: locales.filter(([code])=>data.locales[code]).map(([code])=>[code,url(code,guide.id)])
+ });
+}
+for (const id of infoIds) sitemapPages.push({
+ path: infoUrl('en',id),
+ alternates: locales.filter(([code])=>info[code]).map(([code])=>[code,infoUrl(code,id)])
+}, ...locales.filter(([code])=>info[code]&&code!=='en').map(([code])=>({path:infoUrl(code,id),alternates:locales.filter(([alt])=>info[alt]).map(([alt])=>[alt,infoUrl(alt,id)])})));
+const xmlEscape = value => esc(value);
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemapPages.map(page=>`  <url><loc>${siteOrigin}${xmlEscape(page.path)}</loc>${page.alternates.map(([lang,href])=>`<xhtml:link rel="alternate" hreflang="${xmlEscape(lang)}" href="${siteOrigin}${xmlEscape(href)}"/>`).join('')}</url>`).join('\n')}\n</urlset>\n`;
+fs.writeFileSync(path.join(root,'dist/sitemap.xml'),sitemap);
+fs.writeFileSync(path.join(root,'dist/robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${siteOrigin}/sitemap.xml\n`);
+console.log(`Built sitemap.xml with ${sitemapPages.length} canonical URLs and robots.txt.`);

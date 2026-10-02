@@ -36,6 +36,7 @@ Open http://localhost:4173.
 - `dist/scene-atlas.webp`: 24 fictional illustrated places used as visual clues for all 40 expressions
 - `content/guides.json` and `content/guide-*.json`: authored explanations and translations
 - `scripts/build-guides.cjs`: generate all 60 article pages and 10 guide indexes
+- `dist/sitemap.xml` and `dist/robots.txt`: generated search discovery files for the canonical site pages
 - `dist/guide-data.js`: guide summaries used by the game
 - `dist/guides/<locale>/`: standalone pages; full article text is present without JavaScript
 - `.openai/hosting.json`: Sites hosting configuration
