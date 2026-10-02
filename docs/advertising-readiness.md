@@ -1,8 +1,8 @@
 # Advertising preparation
 
-Advertising is **disabled** in this release. No AdSense IDs have been supplied.
+Advertising is **disabled** in this release. The publisher ID is connected for site verification. No ad-unit ID has been supplied.
 There are no Google advertising requests, auto ads, ads.txt claims or visible empty
-ad boxes. Do not fabricate a publisher ID or publish a placeholder ads.txt.
+ad boxes. Do not fabricate an ad-unit ID or publish a placeholder ads.txt.
 
 ## Prepared placement
 
@@ -14,7 +14,7 @@ Only a manual article placement is supported; do not enable site-wide Auto ads.
 
 ## Before enabling
 
-1. Use the actual account's publisher and manual ad-unit IDs.
+1. Add the actual manual ad-unit ID; the account publisher ID is already in the homepage verification meta tag.
 2. Integrate and verify a Google-certified CMP where required. The current event
    hook is a scaffold, **not a certified CMP**. The real adapter must handle
    regional requirements, consent decisions, withdrawal and Google consent

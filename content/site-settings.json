@@ -4,7 +4,7 @@
   "updated": "2026-10-02",
   "ads": {
     "enabled": false,
-    "publisherId": null,
+    "publisherId": "ca-pub-5987896746147751",
     "slotId": null,
     "consentIntegrationReady": false,
     "privacyReviewComplete": false
