@@ -105,4 +105,10 @@ const xmlEscape = value => esc(value);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemapPages.map(page=>`  <url><loc>${siteOrigin}${xmlEscape(page.path)}</loc>${page.alternates.map(([lang,href])=>`<xhtml:link rel="alternate" hreflang="${xmlEscape(lang)}" href="${siteOrigin}${xmlEscape(href)}"/>`).join('')}</url>`).join('\n')}\n</urlset>\n`;
 fs.writeFileSync(path.join(root,'dist/sitemap.xml'),sitemap);
 fs.writeFileSync(path.join(root,'dist/robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${siteOrigin}/sitemap.xml\n`);
-console.log(`Built sitemap.xml with ${sitemapPages.length} canonical URLs and robots.txt.`);
+if(settings.ads.publisherId) {
+ const publisherNumber = settings.ads.publisherId.replace(/^ca-pub-/, '');
+ fs.writeFileSync(path.join(root,'dist/ads.txt'),`google.com, pub-${publisherNumber}, DIRECT, f08c47fec0942fa0\n`);
+} else {
+ fs.rmSync(path.join(root,'dist/ads.txt'),{force:true});
+}
+console.log(`Built sitemap.xml with ${sitemapPages.length} canonical URLs, robots.txt, and ${settings.ads.publisherId?'ads.txt':'no ads.txt (publisher ID not configured)'}.`);
