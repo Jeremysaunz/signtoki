@@ -27,7 +27,7 @@ for(const [locale,c] of Object.entries(data.locales)) {
     assert.ok(html.includes(a[2].replaceAll('&','&amp;').replaceAll('"','&quot;')),'Article is available before JavaScript');
     assert.ok(html.includes(`set=${g.set}&play=1`));
     assert.equal((html.match(/<h1>/g)||[]).length,1);
-    assert.equal((html.match(/hreflang=/g)||[]).length,10);
+    assert.equal((html.match(/hreflang=/g)||[]).length,11);
     assert.ok(html.includes('Words')||html.includes(c.labels[7]));
     assert.ok(html.includes('reading-date'));
     assert.ok(!html.includes('undefined'));
@@ -58,7 +58,7 @@ for(const [locale,c] of Object.entries(data.locales)) {
    assert.ok(html.includes('<html lang="'+locale+'">'));
    assert.ok(html.includes('제레미 · Jeremy'));
    assert.ok(!html.includes('{operator}')&&!html.includes('{date}'));
-   assert.equal((html.match(/hreflang=/g)||[]).length,10);
+   assert.equal((html.match(/hreflang=/g)||[]).length,11);
    assert.ok(html.includes('/info/ja/'+id+'.html'),'Language switching keeps info page');
    assert.ok(!html.includes('data-guide-ad'));
    checkLinks(html,locale+'/'+id);

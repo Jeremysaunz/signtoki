@@ -1,3 +1,17 @@
+# Public game and learning guides are available to search and answer engines.
 User-agent: *
 Allow: /
+
+# ChatGPT Search citations (separate from model-training crawls).
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Training crawlers. These permissions do not guarantee search citations.
+User-agent: GPTBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://signtoki.com/sitemap.xml

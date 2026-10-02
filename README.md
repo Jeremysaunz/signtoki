@@ -14,6 +14,9 @@ Vercel serves the static site from `dist/` as configured in `vercel.json`.
 - Place comparisons, contextual examples, audio word collections, and links into related five-question rounds
 - Three distinct sign cases, a reading sequence, a counterexample and two explained self-check questions per guide, in all ten languages
 - Localized About, Contact and Privacy pages; operator: Jeremy (제레미)
+- Canonical URLs, reciprocal language alternates, social preview metadata, and relevant JSON-LD on static content pages
+- A crawlable homepage field guide with direct links to practical sign-reading articles
+- Explicit access for search crawlers, including ChatGPT Search and Google AI grounding crawlers
 - Disabled, guide-only manual ad placement scaffolding; no actual advertisements
 
 ## Local preview
@@ -38,6 +41,7 @@ Open http://localhost:4173.
 - `content/guides.json` and `content/guide-*.json`: authored explanations and translations
 - `scripts/build-guides.cjs`: generate all 60 article pages and 10 guide indexes
 - `dist/sitemap.xml` and `dist/robots.txt`: generated search discovery files for the canonical site pages
+- `dist/og-image.png`: shared 1200 × 630 social preview image
 - `dist/ads.txt`: generated authorized-seller record from the configured AdSense publisher ID
 - `dist/guide-data.js`: guide summaries used by the game
 - `dist/guides/<locale>/`: standalone pages; full article text is present without JavaScript
@@ -55,7 +59,15 @@ See [language priorities and sources](docs/language-priorities.md).
 node tests/localization.cjs
 node tests/guides.cjs
 node tests/content-interactions.cjs
+node tests/seo.cjs
 ```
+
+Google's current AI Search guidance recommends the same foundations as SEO:
+indexable, useful pages and clear links. Search Console also has a separate
+setting for inclusion in Google Search generative AI features. OpenAI's
+`OAI-SearchBot` controls ChatGPT Search discovery; `GPTBot` is the separate
+model-training crawler. Robots permissions make content accessible but do not
+guarantee indexing, citations, traffic, or ranking. See [Search and AI discovery](docs/search-discovery.md).
 
 ## Visual hints
 
