@@ -12,7 +12,7 @@ function boot({search='',saved=null,languages=['en'],blockedStorage=false}={}) {
     window:{scrollTo(){}},setTimeout(){}
   };
   vm.createContext(context);
-  for(const file of ['dist/i18n.js','dist/app.js'])vm.runInContext(fs.readFileSync(file,'utf8'),context);
+  for(const file of ['dist/i18n.js','dist/guide-data.js','dist/app.js'])vm.runInContext(fs.readFileSync(file,'utf8'),context);
   return {run:code=>vm.runInContext(code,context),elements};
 }
 for(const [input,want] of [['zh-CN','zh-Hans'],['zh-TW','zh-Hant'],['zh-HK','zh-Hant'],['ja-JP','ja'],['tl-PH','fil'],['hi-IN','hi'],['vi-VN','vi'],['id-ID','id'],['th-TH','th'],['fr-FR','en']]) {
