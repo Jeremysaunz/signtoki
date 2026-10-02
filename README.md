@@ -23,10 +23,10 @@ Open http://localhost:4173.
 ## Files
 
 - `dist/index.html`: page structure and metadata
-- `dist/style.css`: responsive styles
+- `dist/style.css` and `dist/redesign.css`: responsive styles
 - `dist/app.js`: content, language switching, and game logic
 - `dist/i18n.js`: localized interface strings, meanings, and explanations
-- `dist/street.png`: original generated fictional street artwork
+- `dist/street-print.webp`: original two-ink fictional street artwork
 - `.openai/hosting.json`: Sites hosting configuration
 
 Korean audio availability depends on the browser and installed voices. The guide uses authored explanations rather than dictionary API data. No accounts, uploads, location tracking, or live AI generation are required.
