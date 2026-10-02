@@ -1,6 +1,6 @@
 # SignToki · 사인토키
 
-A Korean street-sign reading game for travelers, with English and Korean interfaces.
+A Korean street-sign reading game for travelers, with 10 language interfaces.
 
 ## Features
 
@@ -25,7 +25,18 @@ Open http://localhost:4173.
 - `dist/index.html`: page structure and metadata
 - `dist/style.css`: responsive styles
 - `dist/app.js`: content, language switching, and game logic
+- `dist/i18n.js`: localized interface strings, meanings, and explanations
 - `dist/street.png`: original generated fictional street artwork
 - `.openai/hosting.json`: Sites hosting configuration
 
 Korean audio availability depends on the browser and installed voices. The guide uses authored explanations rather than dictionary API data. No accounts, uploads, location tracking, or live AI generation are required.
+
+## Languages
+
+Simplified Chinese, Japanese, Traditional Chinese, English, Filipino, Vietnamese, Indonesian, Thai, Hindi, and Korean. Browser language detection, saved preferences, and language-aware set links are supported.
+
+See [language priorities and sources](docs/language-priorities.md).
+
+```sh
+node tests/localization.cjs
+```
