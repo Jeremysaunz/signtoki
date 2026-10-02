@@ -1,6 +1,7 @@
 # SignToki · 사인토키
 
 A Korean street-sign reading game for travelers, with 10 language interfaces.
+Vercel serves the static site from `dist/` as configured in `vercel.json`.
 
 ## Features
 
