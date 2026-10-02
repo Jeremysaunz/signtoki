@@ -11,6 +11,9 @@ A Korean street-sign reading game for travelers, with 10 language interfaces.
 - Responsive fictional Seoul street illustration and a street guide
 - Six practical travel guides in all 10 languages, with standalone readable pages
 - Place comparisons, contextual examples, audio word collections, and links into related five-question rounds
+- Three distinct sign cases, a reading sequence, a counterexample and two explained self-check questions per guide, in all ten languages
+- Localized About, Contact and Privacy pages; operator: Jeremy (제레미)
+- Disabled, guide-only manual ad placement scaffolding; no actual advertisements
 
 ## Local preview
 
@@ -47,6 +50,7 @@ See [language priorities and sources](docs/language-priorities.md).
 ```sh
 node tests/localization.cjs
 node tests/guides.cjs
+node tests/content-interactions.cjs
 ```
 
 ## Visual hints
@@ -60,3 +64,17 @@ The six guides cover pharmacy versus clinic, convenience stores versus markets, 
 Translations are authored drafts and have not been independently reviewed by native-speaking editors. The automated checks verify completeness and behavior, not linguistic certification.
 
 Open `/guides/en/index.html` or `/guides/ko/index.html`. A guide keeps its article when the reader changes language. Practice links use `?lang=<locale>&set=<topic>&play=1` to start the related game; feedback links take readers back to a matching guide. Existing game and set-share links remain supported.
+
+## Site information and ads
+
+`content/guide-lessons.json`, `lesson-translations.json` and
+`lesson-more-languages.json` contain the expanded cases and questions.
+`content/site-info.json` contains all thirty information pages.
+`content/site-settings.json` holds the public operator/contact and disabled ad
+configuration. Contact uses the existing public GitHub Issues route; no invented
+email address or contact backend is used. Regenerate with the guide builder after
+changing any of these files.
+
+See [advertising preparation](docs/advertising-readiness.md) before connecting any
+real ads. A working, verified consent integration and current privacy notice are
+required before enabling. The prepared event hook is not a complete CMP.
