@@ -26,7 +26,7 @@ Open http://localhost:4173.
 - `dist/style.css` and `dist/redesign.css`: responsive styles
 - `dist/app.js`: content, language switching, and game logic
 - `dist/i18n.js`: localized interface strings, meanings, and explanations
-- `dist/street-print.webp`: original two-ink fictional street artwork
+- `dist/scene-atlas.webp`: 24 fictional illustrated places used as visual clues for all 40 expressions
 - `.openai/hosting.json`: Sites hosting configuration
 
 Korean audio availability depends on the browser and installed voices. The guide uses authored explanations rather than dictionary API data. No accounts, uploads, location tracking, or live AI generation are required.
@@ -40,3 +40,7 @@ See [language priorities and sources](docs/language-priorities.md).
 ```sh
 node tests/localization.cjs
 ```
+
+## Visual hints
+
+Every question displays its Hangul sign inside a matching illustrated setting. The 24-scene atlas includes a pharmacy, convenience store, café, bakery, restaurant, transport stops, shops, everyday services, and visitor destinations. Related expressions share a setting. Korean signs are rendered as live text, not baked into the artwork.

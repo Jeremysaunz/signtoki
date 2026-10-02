@@ -25,6 +25,13 @@ assert.equal(boot({search:'?lang=invalid',blockedStorage:true,languages:['th']})
 const {run,elements}=boot();
 const locales=run('LOCALES.map(x=>x[0])');
 assert.equal(locales.length,10);
+for(const word of run('baseWords.map(r=>r[0])')) {
+  const tile=run(`SCENE_FOR_WORD[${JSON.stringify(word)}]`);
+  assert.ok(Number.isInteger(tile)&&tile>=0&&tile<24,`Missing visual scene: ${word}`);
+}
+assert.equal(run("SCENE_FOR_WORD['카페']"),2);
+assert.equal(run("SCENE_FOR_WORD['편의점']"),1);
+assert.equal(run("SCENE_FOR_WORD['약국']"),0);
 for(const locale of locales) {
   run(`lang=${JSON.stringify(locale)}; screen='home'; render()`);
   assert.equal(run('document.documentElement.lang'),locale);
@@ -34,6 +41,7 @@ for(const locale of locales) {
     run(`mode=${JSON.stringify(mode)}; start(${topic});`);
     for(let question=0;question<5;question++) {
       assert.equal(run('choices.length'),4);
+      assert.ok(elements.get('#app').innerHTML.includes('context-scene'),'question needs a visual scene');
       assert.ok(!elements.get('#app').innerHTML.includes('undefined'));
       run('answer(choices.findIndex(r=>r[0]===round[index][0]));render();');
       assert.equal(run('score'),question+1,'rerender must not score twice');
@@ -53,4 +61,4 @@ assert.equal(run('lang'),'hi');assert.equal(run('score'),1);assert.equal(run('an
 assert.equal(run('groups[0][3][0][0]'),'약국','starting from a street sign must not mutate the source set');
 run("start(0);answer(choices.findIndex(r=>r[0]!==round[index][0]));render();");
 assert.equal(run('score'),0);assert.equal(run('answered'),true);
-console.log('PASS: 10 languages, complete UI coverage, 160 rounds / 800 questions, translations, locale detection, storage fallback, and answer preservation.');
+console.log('PASS: 10 languages, complete UI coverage, 160 rounds / 800 questions, translations, locale detection, storage fallback, answer preservation, and all 40 visual contexts.');

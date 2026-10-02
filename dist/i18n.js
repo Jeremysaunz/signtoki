@@ -55,7 +55,8 @@ const I18N = {
       "Made for curious travelers ♡": "为好奇的旅行者而做 ♡",
       "You read 5 signs. {score} out of 5 correct.": "你读了5个招牌，答对了{score}道。",
       "Language": "语言",
-      "Listen to {word}": "听{word}的发音"
+      "Listen to {word}": "听{word}的发音",
+      "Look at the scene for clues.": "看看图中的线索。"
     },
     "topics": [
       "旅行必备",
@@ -208,7 +209,8 @@ const I18N = {
       "Made for curious travelers ♡": "為好奇的旅行者而做 ♡",
       "You read 5 signs. {score} out of 5 correct.": "你讀了5個招牌，答對了{score}道。",
       "Language": "語言",
-      "Listen to {word}": "聽{word}的發音"
+      "Listen to {word}": "聽{word}的發音",
+      "Look at the scene for clues.": "看看圖中的線索。"
     },
     "topics": [
       "旅行必備",
@@ -361,7 +363,8 @@ const I18N = {
       "Made for curious travelers ♡": "好奇心いっぱいの旅人へ ♡",
       "You read 5 signs. {score} out of 5 correct.": "看板を5つ読みました。正解は{score}／5問。",
       "Language": "言語",
-      "Listen to {word}": "{word}の発音を聞く"
+      "Listen to {word}": "{word}の発音を聞く",
+      "Look at the scene for clues.": "絵の中のヒントを探そう。"
     },
     "topics": [
       "旅の必需品",
@@ -514,7 +517,8 @@ const I18N = {
       "Made for curious travelers ♡": "Para sa mga mausisang manlalakbay ♡",
       "You read 5 signs. {score} out of 5 correct.": "Nakabasa ka ng 5 karatula. {score} sa 5 ang tama.",
       "Language": "Wika",
-      "Listen to {word}": "Pakinggan ang {word}"
+      "Listen to {word}": "Pakinggan ang {word}",
+      "Look at the scene for clues.": "Tingnan ang larawan para sa mga pahiwatig."
     },
     "topics": [
       "Kailangan sa biyahe",
@@ -667,7 +671,8 @@ const I18N = {
       "Made for curious travelers ♡": "Dành cho người thích khám phá ♡",
       "You read 5 signs. {score} out of 5 correct.": "Bạn đã đọc 5 biển hiệu. Đúng {score}/5 câu.",
       "Language": "Ngôn ngữ",
-      "Listen to {word}": "Nghe phát âm {word}"
+      "Listen to {word}": "Nghe phát âm {word}",
+      "Look at the scene for clues.": "Tìm gợi ý trong hình nhé."
     },
     "topics": [
       "Thiết yếu khi du lịch",
@@ -820,7 +825,8 @@ const I18N = {
       "Made for curious travelers ♡": "Untuk wisatawan yang ingin tahu ♡",
       "You read 5 signs. {score} out of 5 correct.": "Kamu membaca 5 papan. {score} dari 5 jawaban benar.",
       "Language": "Bahasa",
-      "Listen to {word}": "Dengarkan {word}"
+      "Listen to {word}": "Dengarkan {word}",
+      "Look at the scene for clues.": "Cari petunjuk dalam gambar."
     },
     "topics": [
       "Bekal perjalanan",
@@ -973,7 +979,8 @@ const I18N = {
       "Made for curious travelers ♡": "สำหรับนักเดินทางที่ชอบค้นหา ♡",
       "You read 5 signs. {score} out of 5 correct.": "คุณอ่านครบ 5 ป้าย ตอบถูก {score} จาก 5 ข้อ",
       "Language": "ภาษา",
-      "Listen to {word}": "ฟังเสียง {word}"
+      "Listen to {word}": "ฟังเสียง {word}",
+      "Look at the scene for clues.": "มองหาคำใบ้ในภาพ"
     },
     "topics": [
       "คำจำเป็นระหว่างเที่ยว",
@@ -1126,7 +1133,8 @@ const I18N = {
       "Made for curious travelers ♡": "जिज्ञासु यात्रियों के लिए ♡",
       "You read 5 signs. {score} out of 5 correct.": "आपने 5 बोर्ड पढ़े। 5 में से {score} जवाब सही।",
       "Language": "भाषा",
-      "Listen to {word}": "{word} का उच्चारण सुनें"
+      "Listen to {word}": "{word} का उच्चारण सुनें",
+      "Look at the scene for clues.": "तस्वीर में संकेत खोजें।"
     },
     "topics": [
       "सफ़र के ज़रूरी शब्द",
@@ -1279,7 +1287,8 @@ const I18N = {
       "Made for curious travelers ♡": "Made for curious travelers ♡",
       "You read 5 signs. {score} out of 5 correct.": "You read 5 signs. {score} out of 5 correct.",
       "Language": "Language",
-      "Listen to {word}": "Listen to {word}"
+      "Listen to {word}": "Listen to {word}",
+      "Look at the scene for clues.": "Look at the scene for clues."
     }
   },
   "ko": {
@@ -1338,7 +1347,8 @@ const I18N = {
       "Made for curious travelers ♡": "호기심 많은 여행자를 위해 ♡",
       "You read 5 signs. {score} out of 5 correct.": "간판 5개를 읽었어요. 정답 {score} / 5.",
       "Language": "언어",
-      "Listen to {word}": "{word} 발음 듣기"
+      "Listen to {word}": "{word} 발음 듣기",
+      "Look at the scene for clues.": "그림 속 단서를 보고 맞혀 보세요."
     }
   }
 };
